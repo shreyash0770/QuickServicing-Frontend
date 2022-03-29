@@ -10,9 +10,14 @@ export default class Header extends Component {
       super(props)
     
       this.state = {
-         
+        customers: [] 
       }
+      this.signupPage = this.signupPage.bind(this);
     }
+
+    signupPage(){
+      this.props.history.push('signup');
+  }
 
   render() {
     return (
@@ -32,9 +37,9 @@ export default class Header extends Component {
         </ReactBootStrap.Nav>
        
         <ReactBootStrap.Nav>
-          <ReactBootStrap.Nav.Link href="Login.js" >Login</ReactBootStrap.Nav.Link>
+          <ReactBootStrap.Nav.Link href="" >Login</ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link href="" disabled>/</ReactBootStrap.Nav.Link>
-          <ReactBootStrap.Nav.Link href="Login">SignUp</ReactBootStrap.Nav.Link>  
+          <ReactBootStrap.Nav.Link href="signup" onClick={this.signupPage} >SignUp</ReactBootStrap.Nav.Link>  
         </ReactBootStrap.Nav>
       </ReactBootStrap.Navbar.Collapse>  
     </ReactBootStrap.Navbar>
