@@ -25,7 +25,7 @@ export default class Signup extends Component {
         <div className='loginpage'>
           <div className="row">
   <div className="col-sm-8">
-    <div className="card" style={{backgroundColor:"lightgray",marginTop: "20px"}}>
+    <div className="card" style={{backgroundColor:"lightgray",marginTop: ""}}>
       <div className="card-body">
         <h5 className="card-title">Admin Login</h5>
        
@@ -35,21 +35,21 @@ export default class Signup extends Component {
   </div>
 
   <div className="col-sm-8">
-    <div className="card" style={{backgroundColor:"lime",marginTop: "20px"}}>
+    <div className="card" style={{backgroundColor:"lime",marginTop: ""}}>
       <div className="card-body">
         <h5 className="card-title">Customer Login</h5>
        
-        <a href="#" className="btn btn-success">Log In</a>
+        <a href="customerLogin" className="btn btn-success">Log In</a>
       </div>
     </div>
     </div>
 
   <div className="col-sm-8">
-    <div className="card" style={{backgroundColor:"blueviolet",marginTop: "20px"}}>
+    <div className="card" style={{backgroundColor:"blueviolet",marginTop: ""}}>
       <div className="card-body">
         <h5 className="card-title">Services Login</h5>
        
-        <a href="#" className="btn btn-success">Log In</a>
+        <a href="serviceProviderLogin" className="btn btn-success">Log In</a>
       </div>
     </div>
     </div>

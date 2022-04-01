@@ -11,11 +11,16 @@ export default class Signup extends Component {
       }
 
       this.customerSignupPage = this.customerSignupPage.bind(this);
+      this.serviceproviderSignupPage =this.serviceproviderSignupPage.bind(this);
 
     }
 
     customerSignupPage(){
       this.props.history.push('add-customer');
+    }
+
+    serviceproviderSignupPage(){
+      this.props.history.push('ServiceProviderSignUp')
     }
 
   render() {
@@ -37,7 +42,7 @@ export default class Signup extends Component {
       <div className="card-body">
         <h5 className="card-title">Services SignUp</h5>
         <p className="card-text">Fill your information below and serve your best.</p>
-        <a href="#" className="btn btn-success">Sign Up</a>
+        <a href="ServiceProviderSignUp" onClick={this.serviceproviderSignupPage} className="btn btn-success">Sign Up</a>
       </div>
     </div>
     </div>

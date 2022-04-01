@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ServiceProviderService from '../../services/ServiceProviderService';
+import ServiceProvidersService from '../services/ServiceProvidersService';
+
 
 export default class ServiceProviderSignUp extends Component {
  
@@ -14,8 +15,8 @@ export default class ServiceProviderSignUp extends Component {
         Pincode: '',
         City: '',
         Password: '',
-        Role:''
-        // Picture:''
+        Role:'',
+        Picture:''
         // formErrors: {email: '', Password: ''},
         // emailValid: false,
         // passwordValid: false,
@@ -30,7 +31,7 @@ export default class ServiceProviderSignUp extends Component {
       this.changeCityHandler = this.changeCityHandler.bind(this);
       this.changePasswordHandler = this.changePasswordHandler.bind(this);
       this.changeRoleHandler = this.changeRoleHandler.bind(this);
-//       this.changePictureHandler = this.changePictureHandler.bind(this);
+    //   this.changePictureHandler = this.changePictureHandler.bind(this);
       this.saveServiceProvider = this.saveServiceProvider.bind(this);
     }
 
@@ -42,8 +43,8 @@ export default class ServiceProviderSignUp extends Component {
                                 s_Password: this.state.Password, s_Role: this.state.Role};
                 console.log('serviceProvider => ' +JSON.stringify(serviceProvider));
 
-                ServiceProviderService.createServiceProvider(serviceProvider).then(res =>{
-                        window.location.href ='/getserviceproviders'; 
+                ServiceProvidersService.createServiceProviders(serviceProvider).then(res =>{
+                        window.location.href ='/login'; 
                 });
     }
     changeNameHandler =(event) => {
@@ -77,9 +78,10 @@ export default class ServiceProviderSignUp extends Component {
 
   render() {
     return (
-                <div>                 
-                        <div className="container p-5 oooo">
-                                <form className="row g-3 needs-validation" novalidate>
+                <div>    
+                    <h3>Registration Page</h3>            
+                    <div className="container p-5 oooo">
+                                <form className="row g-3 needs-validation" noValidate>
                                         <div className="col-md-4">
                                                 <label  className="form-label">Name Of Shop</label>
                                                 <div className="input-group has-validation">
@@ -153,12 +155,13 @@ export default class ServiceProviderSignUp extends Component {
                                                 
                                                 </datalist>
                                                 </div>
-                                                {/* </div>  
-                                                <div className="col-md-8">
+                                                {/* </div>   */}
+                                                {/* <div className="col-md-8">
                                                         <label  className="form-label">Choose Picture of Your Shop </label>
                                                         <input className="form-control" type="file" id="formFile" 
                                                                 value={this.state.Picture} onChange={this.changePictureHandler}/>
                                                 </div>   */}
+                                                
                                                 <div className="col">
                                                 <label  className="form-label">Enter Strong Password</label>
                                                 <div  className="input-group has-validation">
@@ -175,6 +178,7 @@ export default class ServiceProviderSignUp extends Component {
                                                 <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
                                                 <label className="form-check-label">
                                                      Agree to <a href='t'>   terms and conditions</a>
+                                                     
                                                 </label>
                                                 <div className="invalid-feedback">
                                                         You must agree before submitting.
@@ -192,6 +196,7 @@ export default class ServiceProviderSignUp extends Component {
 
                 {/* Main Div */}
         </div>
+        
       
       )
   }

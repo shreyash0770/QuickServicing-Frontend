@@ -62,7 +62,7 @@ export default class ServiceProvidersList extends Component {
                           <th> Phone</th>
                           <th> City</th>
                           <th> Address</th>
-                          <th>Services</th>
+                        
                           <th>Actions</th>
                       </tr>
                   </thead>
@@ -77,10 +77,7 @@ export default class ServiceProvidersList extends Component {
                                   <td>{serviceProvider.s_Phone}</td>
                                   <td>{serviceProvider.s_City}</td>
                                   <td>{serviceProvider.s_Address}</td>
-                                  <td>
-                                      {serviceProvider.ser_Type}
-                                      {serviceProvider.ser_Price}
-                                  </td>
+                                
                                   <td>
                                       <button  onClick={()=>this.editServiceProvider(serviceProvider.s_Id)} className="btn btn-info" >Update</button>
                                       <button  onClick={()=>this.deleteServiceProvider(serviceProvider.s_Id)} className="btn btn-danger" style={{marginLeft:'10px'}} >Delete</button>
