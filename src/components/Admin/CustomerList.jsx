@@ -1,17 +1,24 @@
+import { Toast } from 'bootstrap';
 import React, { Component } from 'react'
 import CustomerService from '../services/CustomerService'
 
+
+
+
 export default class CustomerList extends Component {
     constructor(props) {
+        
       super(props)
     
       this.state = {
          customers: []
       }
-      this.addCustomer = this.addCustomer.bind(this);
+      
       this.editCustomer = this.editCustomer.bind(this);
       this.deleteCustomer = this.deleteCustomer.bind(this);
     }
+
+    
 
     deleteCustomer(c_Id){
        
@@ -19,13 +26,16 @@ export default class CustomerList extends Component {
         {
                CustomerService.deleteCustomer(c_Id).then(res => {
                 this.setState({customers:this.state.customers.filter(customer => customer.c_Id !== c_Id)});
+                
             });
+            
         }
        
     }
 
     editCustomer(c_Id){
-        this.props.history.push(`/update-customer/${c_Id}`);
+ 
+        this.props.history.push('/update-customer/{c_Id}');
         
     }
 
@@ -36,17 +46,16 @@ export default class CustomerList extends Component {
        });
     }
 
-    addCustomer(){
-        this.props.history.push('add-customer');
-    }
+    
 
   render() {
     return (
-      <div>
+        <div className='customerlist'>
+      <div className='container'>
           <h2 className='text-center'>Customers List</h2>
-             <div className='row-3'>
-                <button className='btn btn-primary' onClick={this.addCustomer}>Customer Registration</button>
-             </div>
+
+          <a style={{marginRight:'1200px'}} href='/adminpage' className='btn btn-primary'>Back</a>
+           
           <div className='row'>
               <table className='table table-striped table-bordered'>
                   <thead>
@@ -85,6 +94,9 @@ export default class CustomerList extends Component {
 
           </div>
       </div>
+      </div>
     )
   }
 }
+
+

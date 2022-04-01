@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import CustomerService from '../services/CustomerService';
 
+
 export default class UpdateCustomer extends Component {
     constructor(props) {
         super(props)
       
         this.state = {
+            
           id: this.props.match.params.id,
           name:'',
           email:'',
@@ -50,7 +52,8 @@ export default class UpdateCustomer extends Component {
             console.log('customer =>' + JSON.stringify(customer));
 
             CustomerService.updateCustomer(customer,this.state.id).then(res =>{
-                this.props.history.push('/customers');
+                
+                window.location.href = "/customers";
             });
       
            

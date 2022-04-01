@@ -15,7 +15,7 @@ export default class Backround extends Component {
      <div>
          <figure className="position-relative">
             <fig>
-                <img src={require('../images/mainback.png')}  style={{width: "100%"}} ></img>
+                <img src="./images/mainback.png"  style={{width: "100%"}} ></img>
             </fig>
            
          </figure>       

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as ReactBootStrap from "react-bootstrap";
 
+
 export default class Signup extends Component {
     constructor(props) {
       super(props)
@@ -19,24 +20,26 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div className='container'>
-          <div class="row">
-  <div class="col-sm-6">
-    <div class="card" style={{backgroundColor:"lightgray",marginTop: "60px"}}>
-      <div class="card-body">
-        <h5 class="card-title">Customer SignUp</h5>
-        <p class="card-text">Fill your information below and get best services.</p>
-        <a href="add-customer" onClick={this.customerSignupPage} class="btn btn-info">Sign Up</a>
+      <div className=''>
+        <div className='signuppage'>
+          <div className="row">
+  <div className="col-sm-6">
+    <div className="card" style={{backgroundColor:"lightgray",marginTop: "60px"}}>
+      <div className="card-body">
+        <h5 className="card-title">Customer SignUp</h5>
+        <p className="card-text">Fill your information below and get best services.</p>
+        <a href="add-customer" onClick={this.customerSignupPage} className="btn btn-info">Sign Up</a>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card" style={{backgroundColor:"lime",marginTop: "60px"}}>
-      <div class="card-body">
-        <h5 class="card-title">Services SignUp</h5>
-        <p class="card-text">Fill your information below and serve your best.</p>
-        <a href="#" class="btn btn-success">Sign Up</a>
+  <div className="col-sm-6">
+    <div className="card" style={{backgroundColor:"lime",marginTop: "60px"}}>
+      <div className="card-body">
+        <h5 className="card-title">Services SignUp</h5>
+        <p className="card-text">Fill your information below and serve your best.</p>
+        <a href="#" className="btn btn-success">Sign Up</a>
       </div>
+    </div>
     </div>
   </div>
 </div>

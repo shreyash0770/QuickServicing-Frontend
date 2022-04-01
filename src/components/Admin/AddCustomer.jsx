@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { useHistory } from "react-router-dom";
 
 import CustomerService from '../services/CustomerService'
 
@@ -36,7 +37,8 @@ registerCustomer=(e)=>{
       console.log('customer =>' + JSON.stringify(customer));
 
       CustomerService.createCustomer(customer).then(res =>{
-          this.props.history.push('/customers');
+        //   this.props.history.push('/login');
+          window.location.href = "/login";
       });
 }
 
@@ -69,12 +71,14 @@ changePasswordHandler=(event) =>{
 }
 
 cancel(){
-    this.props.history.push('/customers');
+    
+    window.location.href = "/login";
 }
 
   render() {
     return (
-        <div className='container'>
+        <div className='addcustomer'>
+            <div className='container'>
             <div className='row'>
                 <div className='card col-md-6 offset-md-3 offset-md-3'  style={{marginTop: "60px",marginBottom: "70px"}} >
         <form style={{backgroundColor:"aliceblue"}}>
@@ -124,11 +128,12 @@ cancel(){
         </div>
 
         <button  className="btn btn-success " onClick={this.registerCustomer}>Register</button>
-        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}} >Cancel</button>
+        <a className="btn btn-danger" href="login" onClick={this.cancel} style={{marginLeft:"10px"}} >Cancel</a>
         <p className="forgot-password text-right">
-            Already registered <a href="#">log in?</a>
+            Already registered <a href="login">log in?</a>
         </p>
     </form>
+    </div>
     </div>
     </div>
     </div>

@@ -1,0 +1,40 @@
+import React, { Component } from 'react'
+
+export default class AdminPage extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         
+      }
+    }
+  render() {
+    return (
+      <div className='adminpage'>
+       
+       <div className='' style={{marginTop:'50px',marginLeft:'50px'}}>
+       <div className="cardname" style={{width:'18rem'}}>
+       <img className="card-img-top overlay overlayFade" src="./images/Customerimg.png" style={{backgroundColor:'orange'}} alt="Card image cap" />
+       <div className="card-body" >
+       <h5 className="card-title">Customers</h5>
+       <p className="card-text">Get all details of all customers</p>
+       <a href="/customers" className="btn btn-primary">Customer Details</a>
+       </div>
+       </div>
+       </div>
+
+       <div className='' style={{marginTop:'50px',marginLeft:'400px'}}>
+       <div className="cardname" style={{width:'18rem'}}>
+       <img className="card-img-top overlay overlayFade" src="./images/g1.png" style={{backgroundColor:'orange'}} alt="Card image cap" />
+       <div className="card-body" >
+       <h5 className="card-title">Service Providers</h5>
+       <p className="card-text">Get all details of Service Providers</p>
+       <a href="/ServiceProviders" className="btn btn-primary">Service Providers Details</a>
+       </div>
+       </div>
+       </div>
+
+      </div>
+    )
+  }
+}
